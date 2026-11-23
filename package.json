@@ -1,0 +1,27 @@
+{
+  "name": "hooks-monorepo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build:a": "npm run build -w app-a",
+    "build:b": "npm run build -w app-b",
+    "test:a": "npm run test -w app-a",
+    "test:b": "npm run test -w app-b",
+    "dev:a": "npm run dev -w app-a",
+    "dev:b": "npm run dev -w app-b",
+    "check": "npm run build:a && npm run test:a && npm run build:b && npm run test:b",
+    "why-react": "npm ls react react-dom --all",
+    "preview:a": "npm run build -w app-a && npm run preview -w app-a",
+    "preview:b": "npm run build -w app-b && npm run preview -w app-b"
+  },
+  "//": "Root tooling (e.g. Storybook) pins React 18, so npm hoists react@18.3.1 to <root>/node_modules.",
+  "devDependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
+}

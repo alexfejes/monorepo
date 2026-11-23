@@ -1,0 +1,16 @@
+{
+  "name": "@demo/ui",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "//": "BUG: react is a hard 'dependency', so npm can give this package its OWN copy of React. JSON has no comments, so the fix is 'commented out' by key name. FIX step 1: delete the 'dependencies' block and rename '//peerDependencies' -> 'peerDependencies' so the consuming app supplies React. Then run npm install.",
+  "peerDependcies": {
+    "react": "18.3.1"
+  },
+  "//peerDependencies": {
+    "react": "^18.3.0 || ^19.0.0"
+  }
+}
