@@ -15,11 +15,12 @@
     "dev:a": "npm run dev -w app-a",
     "dev:b": "npm run dev -w app-b",
     "check": "npm run build:a && npm run test:a && npm run build:b && npm run test:b",
+    "//check": "npm run build:a && npm run test:a && npm run build:b && npm run test:b && npm run check:react",
     "why-react": "npm ls react react-dom --all",
     "preview:a": "npm run build -w app-a && npm run preview -w app-a",
-    "preview:b": "npm run build -w app-b && npm run preview -w app-b"
+    "preview:b": "npm run build -w app-b && npm run preview -w app-b",
+    "//check:react": "node scripts/verify-react-bundle.mjs"
   },
-  "//": "Root tooling (e.g. Storybook) pins React 18, so npm hoists react@18.3.1 to <root>/node_modules.",
   "devDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1"
